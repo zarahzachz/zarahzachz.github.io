@@ -9,8 +9,6 @@ last-modified-at:
     date-format: '%d-%b-%y'
 
 collections:
-  posts:
-    collections_dir: works
   tags:
     output: true
 
