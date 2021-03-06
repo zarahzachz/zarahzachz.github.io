@@ -1,0 +1,20 @@
+<nav class="global">
+  <ul>
+    {% for item in site.data.navigation %}
+    {% if page.url.size >= 1  %}
+      {% assign small_name = item.name | remove_first: "/" | downcase %}
+    {% endif %}
+    <li>
+      <a href="{{ item.link }}" 
+        {% if page.url contains small_name or (page.title == item.name) %}
+          class="current"
+        {% endif %}
+      >
+        {{ item.name }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <button>Settings</button>
+</nav>

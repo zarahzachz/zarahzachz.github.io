@@ -1,0 +1,70 @@
+// Contains global styles, such as resets, typography, colors, etc.
+
+@import 'reset'
+, 'variables';
+
+:root {
+  --mono: 'Menlo','Consolas','Monaco','liberation mono','lucida console',monospace;
+  --sans: -apple-system,'BlinkMacSystemFont','segoe ui','Roboto','Helvetica','Arial',sans-serif,'apple color emoji','segoe ui emoji','segoe ui symbol';
+  --serif: 'Iowan Old Style', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  --black: hsl(0, 20, 20);
+  --white: white;
+  --brand: tan;
+  --link-color: dodgerblue;
+  --base-font-size: 1rem;
+  --base-line-height: 1.5;
+}
+
+html,
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+}
+
+code, pre {
+  font-family: var(--mono);
+}
+
+.light {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.serif {
+  font-family: var(--serif);
+}
+
+.sans-serif {
+  font-family: var(--sans);
+}
+
+main {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: 0 2ch;
+
+  a {
+    color: var(--link-color);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+}

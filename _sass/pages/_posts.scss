@@ -1,0 +1,22 @@
+.posts {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }  
+  }
+
+  h3 {
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    font-size: .75rem;
+  }
+}

@@ -1,0 +1,64 @@
+.post {
+  .post-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .post-body {
+    * {
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+      margin-top: 3rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: .25rem;
+    }
+
+    > img {
+      border-radius: 4px;
+      display: block;
+      margin: 2rem auto;
+    }
+
+    blockquote {
+      background-color: hsla(0, 0, 95, 0.7);
+      border-radius: 4px;
+      font-size: 1.25rem;
+      padding: 2ch;
+
+      *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .post-meta {
+    border-top: 1px solid hsla(0, 0%, 65%, 1);
+    font-size: .75rem;
+    margin-top: 6ch;
+    padding: 2ch 0;
+    color: hsla(0, 0%, 65%, 1);
+
+    .meta-tags ul,
+    .meta-tags li {
+      display: inline;
+    }
+
+    .meta-related ul,
+    .meta-related li {
+      display: inline;
+    }
+
+    .meta-tags li:not(:last-child)::after,
+    .meta-related li:not(:last-child)::after {
+      content: ',';
+    }
+  }
+}

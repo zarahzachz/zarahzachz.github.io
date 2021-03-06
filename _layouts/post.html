@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <footer class="post-meta">
+    <div class="meta-dates">
+      <div class="date-pub">Published: {{ page.date | date_to_string }}</div>
+      <div class="date-mod">Last modified: {{ page.last_modified_at | date_to_string }}</div>
+    </div>
+    <!-- <div class="meta-tags">
+      <span>Tags:</span>
+      <ul>
+        {% assign tag = site.tags | where: 'short_name', page.tag | first %}
+        {% if tag %}
+          <li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="meta-related">
+      <span>See also:</span>
+      <ul>
+        <li><a href="#">Related Article</a></li>
+        <li><a href="#">Related Article</a></li>
+        <li><a href="#">Related Article</a></li>
+      </ul>
+    </div> -->
+  </footer>
+</article>
