@@ -2,54 +2,45 @@
   Settings
   <span aria-hidden="true">&bigtriangledown;</span> 
 </button>
+
 <!-- role="menuitemradio": https://w3c.github.io/aria/#menuitemradio -->
 <div role="menu" class="settings-menu js-settings-menu" aria-label="customize your settings" hidden>
-  <div role="group">
+
+  <div role="group" data-setting="typeface">
     <fieldset>
       <legend>Select a typeface:</legend>
-      <input type="radio" id="fontSans" name="typeface" role="menuitemradio" >
+      <input type="radio" id="fontSans" data-type="sans" name="typeface" role="menuitemradio" checked>
       <label for="fontSans">Sans-Serif</label>
-      <input type="radio" id="fontSerif" name="typeface" role="menuitemradio" checked>
+      <input type="radio" id="fontSerif" data-type="serif" name="typeface" role="menuitemradio">
       <label for="fontSerif">Serif</label>
     </fieldset>
   </div>
 
-  <!--
-  <div role="group" oninput="fontSizeResult.value=parseInt(fontSize.value)">
+  <div role="group" data-setting="font-size">
     <label for="fontSize">Choose your font-size:</label>
-    <input type="range" id="fontSize" name="fontSize" min="1" max="15" value="5" aria-valuetext="font size: 5">
-    <output name="fontSizeResult" for="fontSize">5</output>
+    <input type="range" id="fontSize" name="font-size" min="1" max="15" value="5" aria-valuetext="font size: 5">
+    <output name="result" for="fontSize">5</output>
   </div>
 
-  <div role="group" aria-label="choose your content width">
-    <!--
-    min = 1
-      if value = 1, minus is disabled
-    max = 9
-      if value = 9, plus is disabled
-    default = 5
-    -->
-    <!--
-    <button role="menuitem" aria-label="decrease content width" title="decrease content width">&minus;</button>
-    <output aria-label="content container width: 5">5</output>
-    <button role="menuitem" aria-label="increase content width" title="increase content width">&plus;</button>
+  <div role="group" data-setting="content-width">
+    <label for="contentWidth">Choose your content width:</label>
+    <input type="range" id="contentWidth" name="content-width" min="1" max="9" value="5" aria-valuetext="content container width: 5">
+    <output name="result" for="contentWidth">5</output>
+  </div>
+  
+  <div role="group" data-setting="line-height">
+    <label for="lineHeight">Choose your line-height:</label>
+    <input type="range" id="lineHeight" name="line-height" min="1" max="9" value="5" aria-valuetext="line height: 5">
+    <output name="result" for="lineHeight">5</output>
   </div>
 
-  <div role="group">
-      <label for="lineHeight">Choose your line-height:</label>
-      <input type="range" id="lineHeight" name="lineHeight" min="1" max="9" value="5" aria-valuetext="line height: 5">
-      <output name="lineHeightResult" for="lineHeight">5</output>
-  </div>
-
-  <div role="group">
+  <div role="group" data-setting="theme">
     <fieldset>
       <legend>Select a theme:</legend>
-      <input type="radio" id="themeLight" name="theme" role="menuitemradio" checked>
+      <input type="radio" id="themeLight" data-theme="light" name="theme" role="menuitemradio" checked>
       <label for="themeLight">Light</label>
-      <input type="radio" id="themeDark" name="theme" role="menuitemradio">
+      <input type="radio" id="themeDark" data-theme="dark" name="theme" role="menuitemradio">
       <label for="themeDark">Dark</label>
-      <input type="radio" id="themeSepia" name="theme" role="menuitemradio">
-      <label for="themeSepia">Sepia</label>
-    </fieldset> -->
+    </fieldset>
   </div>
 </div>

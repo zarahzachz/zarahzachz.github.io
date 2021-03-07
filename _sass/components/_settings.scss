@@ -8,7 +8,7 @@
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  font-size: var(--base-font-size);
+  font-size: var(--font-size);
   box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
               0 2px 2px rgba(0,0,0,0.20), 
               0 4px 4px rgba(0,0,0,0.15), 
@@ -22,7 +22,7 @@
 
   legend,
   label {
-    font-size: calc(var(--base-font-size) * .75);
+    font-size: calc(var(--font-size) * .75);
   }
 
   div[role="group"] {

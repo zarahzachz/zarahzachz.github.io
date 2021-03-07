@@ -10,8 +10,10 @@
 
   --base-border-radius: 4px;
 
-  --base-font-size: 1rem;
-  --base-line-height: 1.5;
+  --font-family: var(--sans);
+  --font-size: 1rem;
+  --line-height: 1.5;
+  --content-width: 60em;
 
   --black: hsl(0, 20, 20);
   --white: white;
@@ -23,9 +25,9 @@ html,
 body {
   background-color: var(--white);
   color: var(--black);
-  font-family: var(--sans);
-  font-size: var(--base-font-size);
-  line-height: var(--base-line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 [hidden] {
@@ -37,7 +39,7 @@ code, pre {
 }
 
 kbd {
-  font-size: calc(var(--base-font-size * .75));
+  font-size: calc(var(--font-size * .75));
   padding: 0.0625rem 0.5rem;
   border-radius: 0.125rem;
   border: 2px solid;
@@ -50,7 +52,7 @@ kbd {
 }
 
 .dark {
-  background-color: var(--black);
+  background-color: hsl(0, 20, 20);
   color: var(--white);
 }
 
@@ -60,10 +62,6 @@ kbd {
 
 .sans-serif {
   font-family: var(--sans);
-}
-
-.sr-only {
-  display: none;
 }
 
 main {
@@ -76,13 +74,13 @@ main {
   }
 
   h2 {
-    font-size: calc(var(--base-font-size) * 2);
+    font-size: calc(var(--font-size) * 2);
     font-weight: bold;
     margin-bottom: 2rem;
   }
 
   h3 {
-    font-size: calc(var(--base-font-size) * 1.25);
+    font-size: calc(var(--font-size) * 1.25);
     font-weight: bold;
     margin-bottom: .5rem;
   }

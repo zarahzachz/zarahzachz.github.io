@@ -42,7 +42,8 @@ nav.global {
     border-radius: var(--base-border-radius);
     color: var(--white);
     cursor: pointer;
-    font-size: var(--base-font-size);
+    font-family: inherit;
+    font-size: var(--font-size);
     margin-left: 2rem;
     padding: .75rem 2rem;
     
@@ -50,7 +51,8 @@ nav.global {
       background-color: darken(tan, 10);
     }
 
-    &:active {
+    &:active,
+    &[aria-expanded="true"] {
       background-color: darken(tan, 20);
     }
   }
