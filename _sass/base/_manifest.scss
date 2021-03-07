@@ -8,12 +8,15 @@
   --sans: -apple-system,'BlinkMacSystemFont','segoe ui','Roboto','Helvetica','Arial',sans-serif,'apple color emoji','segoe ui emoji','segoe ui symbol';
   --serif: 'Iowan Old Style', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
+  --base-border-radius: 4px;
+
+  --base-font-size: 1rem;
+  --base-line-height: 1.5;
+
   --black: hsl(0, 20, 20);
   --white: white;
   --brand: tan;
   --link-color: dodgerblue;
-  --base-font-size: 1rem;
-  --base-line-height: 1.5;
 }
 
 html,
@@ -25,16 +28,20 @@ body {
   line-height: var(--base-line-height);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 code, pre {
   font-family: var(--mono);
 }
 
 kbd {
-    font-size: 0.75em;
-    padding: 0.0625rem 0.5rem;
-    border-radius: 0.125rem;
-    border: 2px solid;
-    box-shadow: 1px 1px 0 currentColor, 2px 2px 0 currentColor;
+  font-size: calc(var(--base-font-size * .75));
+  padding: 0.0625rem 0.5rem;
+  border-radius: 0.125rem;
+  border: 2px solid;
+  box-shadow: 1px 1px 0 currentColor, 2px 2px 0 currentColor;
 }
 
 .light {
@@ -55,6 +62,10 @@ kbd {
   font-family: var(--sans);
 }
 
+.sr-only {
+  display: none;
+}
+
 main {
   max-width: 60ch;
   margin: 0 auto;
@@ -65,13 +76,13 @@ main {
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: calc(var(--base-font-size) * 2);
     font-weight: bold;
     margin-bottom: 2rem;
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: calc(var(--base-font-size) * 1.25);
     font-weight: bold;
     margin-bottom: .5rem;
   }
