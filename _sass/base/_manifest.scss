@@ -29,6 +29,14 @@ code, pre {
   font-family: var(--mono);
 }
 
+kbd {
+    font-size: 0.75em;
+    padding: 0.0625rem 0.5rem;
+    border-radius: 0.125rem;
+    border: 2px solid;
+    box-shadow: 1px 1px 0 currentColor, 2px 2px 0 currentColor;
+}
+
 .light {
   background-color: var(--white);
   color: var(--black);

@@ -1,0 +1,25 @@
+.sr-only {
+  display: none;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 5ch;
+  right: 3ch;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 2ch;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+
+  fieldset {
+    border: 1px solid hsla(0, 0%, 65%, 1);
+    margin: 1ch 0;
+  }
+
+  legend {
+    font-size: .75rem;
+  }
+}
