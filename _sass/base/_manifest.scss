@@ -1,7 +1,6 @@
 // Contains global styles, such as resets, typography, colors, etc.
 
-@import 'reset'
-, 'variables';
+@import 'reset';
 
 :root {
   --mono: 'Menlo','Consolas','Monaco','liberation mono','lucida console',monospace;
@@ -86,11 +85,36 @@ body[data-font="sans-serif"] {
 }
 
 body[data-theme="light"] {
-  // --body-fill: white;
-  // --body-ink: black;
+  --gray: hsl(20deg 11% 84%);
+  --black: hsl(30deg 5% 15%);
+  --tan: hsl(29deg 13% 61%);
+  --tan-50: hsl(29deg 13% 51%);
+  --tan-40: hsl(29deg 13% 41%);
+
+  --body-fill: var(--gray);
+  --body-ink: var(--black);
+  --menu-fill: var(--tan);
+  --menu-fill-hover: var(--tan-50);
+  --menu-fill-active: var(--tan-40);
+  --menu-ink: var(--black);
+  --nav-ink: var(--tan);
+  --nav-ink-hover: var(--black);
 }
 
 body[data-theme="dark"] {
-  // --body-fill: black;
-  // --body-ink: white;
+  --tan: hsl(34deg 52% 66%);
+  --tan-50: hsl(34deg 52% 56%);
+  --tan-40: hsl(34deg 52% 46%);
+  --white: hsl(0deg 0% 100%);
+  --gray: hsl(0deg 0% 65%);
+  --black: hsl(30deg 14% 9%);
+
+  --body-fill: var(--black);
+  --body-ink: var(--gray);
+  --menu-fill: var(--tan);
+  --menu-fill-hover: var(--tan-50);
+  --menu-fill-active: var(--tan-40);
+  --menu-ink: var(--white);
+  --nav-ink: var(--tan);
+  --nav-ink-hover: var(--white);
 }

@@ -1,8 +1,8 @@
 .settings-menu-trigger {
-  background-color: var(--brand);
+  background-color: var(--menu-fill);
   border: 0;
   border-radius: var(--base-border-radius);
-  color: var(--white);
+  color: var(--menu-ink);
   cursor: pointer;
   font-family: inherit;
   font-size: var(--font-size);
@@ -10,12 +10,12 @@
   padding: .75rem 2rem;
   
   &:hover {
-    background-color: darken(tan, 10);
+    background-color: var(--menu-fill-hover);
   }
 
   &:active,
   &[aria-expanded="true"] {
-    background-color: darken(tan, 20);
+    background-color: var(--menu-fill-active);
   }
 }
 

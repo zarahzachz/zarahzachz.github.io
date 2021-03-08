@@ -1,5 +1,5 @@
 nav.global {
-  color: var(--black);
+  color: var(--nav-ink);
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,7 @@ nav.global {
 
     &:hover,
     &.current {
-      color: var(--brand);
+      color: var(--nav-ink-hover);
       text-decoration: underline;
       text-underline-offset: .25rem;
       text-decoration-thickness: .125rem;
