@@ -35,8 +35,6 @@ html,
 body {
   background-color: var(--body-fill);
   color: var(--body-ink);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
 }
 
 [hidden] {
@@ -79,12 +77,20 @@ main {
   }
 }
 
-body.light {
+body[data-font="serif"] {
+  font-family: var(--serif);
+}
+
+body[data-font="sans-serif"] {
+  font-family: var(--sans);
+}
+
+body[data-theme="light"] {
   // --body-fill: white;
   // --body-ink: black;
 }
 
-body.dark {
+body[data-theme="dark"] {
   // --body-fill: black;
   // --body-ink: white;
 }

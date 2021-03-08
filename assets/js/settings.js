@@ -11,129 +11,58 @@ menuButton.addEventListener('click', () => {
   }
 })
 
-const setting = {
-  'font-size': {
-    1: '12px',
-    2: '14px',
-    3: '16px',
-    4: '18px',
-    5: '20px',
-    6: '22px',
-    7: '24px',
-    8: '26px',
-    9: '28px',
-    10: '32px',
-    11: '40px',
-    12: '56px',
-    13: '72px',
-    14: '96px',
-    15: '128px'
+const valueMap = {
+  'font-size': ['12px', '14px', '16px', '18px', '20px', '22px', '24px', '26px', '28px', '32px', '40px', '56px', '72px', '96px', '128px'],
+  'line-height': ['1', '1.2', '1.4', '1.6', '1.8', '2', '2.2', '2.4', '2.6'],
+  'content-width': ['20em', '25em', '30em', '35em', '40em', '45em', '50em', '55em', '60em']
+}
+
+let settings = {
+  toggleOptions: function(dataAttr) {
+    // Find all radio inputs in settings menu
+    const radios = Array.from(menu.querySelectorAll('input[type="radio"]'));
+
+    // Map change event onto each radio input
+    return radios.map((radio) => {
+      radio.addEventListener('change', function() {
+        // If radio has 'checked' attr, grab value of 'data-option'
+        if (this.checked) {
+          const v = this.dataset.option;
+
+          // If closest value of data-setting matches dataAttr parameter,
+          // set CSS variable value to data-option value 
+          const s = this.closest('[data-setting]').dataset.setting
+          s === dataAttr ? document.body.dataset[dataAttr] = v : null
+        }
+      });
+    });
   },
-  'line-height': {
-    1: '1',
-    2: '1.2',
-    3: '1.4',
-    4: '1.6',
-    5: '1.8',
-    6: '2',
-    7: '2.2',
-    8: '2.4',
-    9: '2.6',
-  },
-  'content-width': {
-    1: '20em',
-    2: '25em',
-    3: '30em',
-    4: '35em',
-    5: '40em',
-    6: '45em',
-    7: '50em',
-    8: '55em',
-    9: '60em'
+  rangeOptions: function() {
+    // Find all range inputs
+    const ranges = Array.from(menu.querySelectorAll('input[type="range"]'));
+
+    // Map input event onto each range input
+    return ranges.map(range => {
+      range.addEventListener('input', function() {
+        const s = this.closest('[data-setting]').dataset.setting;
+        const v = this.value;
+        const n = this.getAttribute('name');
+
+        // Assign range value to output element
+        const o = range.nextElementSibling;
+        o.value = parseInt(v);
+
+        // Set aria-valuetext to range value, add label using name attr
+        this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
+
+        // Assign mapped value from valueMap object to CSS custom property
+        const main = document.querySelector('#main-content');
+        main.style.setProperty(`--${s}`, valueMap[n][v-1]);
+      })
+    })
   }
 }
 
-const typefaceGroup = menu.querySelector('[data-setting="typeface"]');
-const typefaces = Array.from(typefaceGroup.querySelectorAll('[data-type]'));
-const typefaceHandler = typefaces.map(typeface => {
-  typeface.addEventListener('change', function(e) { 
-    if (this.dataset.type === 'serif') {
-      document.documentElement.style.setProperty('--font-family', 'var(--serif)');
-    } else if (this.dataset.type === 'sans') {
-      document.documentElement.style.setProperty('--font-family', 'var(--sans)');
-    }
-  })
-});
-
-const fontSizeGroup = menu.querySelector('[data-setting="font-size"]');
-const fontSizeRange = fontSizeGroup.querySelector('input[type="range"]');
-const fontSizeHandler = fontSizeRange.addEventListener('input', function() {
-  let v = this.value;
-  const n = this.getAttribute('name');
-
-  // Assign range value to output element
-  const o = fontSizeGroup.querySelector('output');
-  o.value = parseInt(v);
-
-  // Set aria-valuetext to range value, add label using name attr
-  this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
-
-  // Assign mapped value from Setting obj to CSS custom property
-  const main = document.querySelector('#main-content');
-  main.style.setProperty('--font-size', setting[n][v]);
-});
-
-const contentWidthGroup = menu.querySelector('[data-setting="content-width"]');
-const contentWidthRange = contentWidthGroup.querySelector('input[type="range"]');
-const contentWidthHandler = contentWidthRange.addEventListener('input', function() {
-  let v = this.value;
-  const n = this.getAttribute('name');
-
-  // Assign range value to output element
-  const o = contentWidthGroup.querySelector('output');
-  o.value = parseInt(v);
-
-  // Set aria-valuetext to range value, add label using name attr
-  this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
-
-  // Assign mapped value from Setting obj to CSS custom property
-  const main = document.querySelector('#main-content');
-  main.style.setProperty('--content-width', setting[n][v]);
-});
-
-const lineHeightGroup = menu.querySelector('[data-setting="line-height"]');
-const lineHeightRange = lineHeightGroup.querySelector('input[type="range"]');
-const lineHeightHandler = lineHeightRange.addEventListener('input', function() {
-  let v = this.value;
-  const n = this.getAttribute('name');
-
-  // Assign range value to output element
-  const o = lineHeightGroup.querySelector('output');
-  o.value = parseInt(v);
-
-  // Set aria-valuetext to range value, add label using name attr
-  this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
-
-  // Assign mapped value from Setting obj to CSS custom property
-  const main = document.querySelector('#main-content');
-  main.style.setProperty('--line-height', setting[n][v]);
-});
-
-const themeGroup = menu.querySelector('[data-setting="theme"]');
-const themes = Array.from(themeGroup.querySelectorAll('[data-theme]'));
-
-const themeHandler = themes.map(typeface => {
-  typeface.addEventListener('change', function() {
-    if (this.dataset.theme === 'light') {
-      document.body.classList.add('light');
-      if (document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark');
-      }
-    } else if (this.dataset.theme === 'dark') {
-      document.body.classList.add('dark');
-      if (document.body.classList.contains('light')) {
-        document.body.classList.remove('light');
-      }
-    } 
-  })
-});
+settings.toggleOptions('font')
+settings.toggleOptions('theme')
+settings.rangeOptions()
