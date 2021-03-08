@@ -15,12 +15,12 @@
   --base-border-radius: 4px;
 
   --body-fill: var(--white);
-  --font-color: var(--black);
+  --body-ink: var(--black);
+
   --font-family: var(--sans);
   --font-size: 1rem;
   --line-height: 1.5;
   --content-width: 40em;
-
 }
 
 html {
@@ -34,7 +34,7 @@ body {
 html,
 body {
   background-color: var(--body-fill);
-  color: var(--font-color);
+  color: var(--body-ink);
   font-family: var(--font-family);
   font-size: var(--font-size);
 }
@@ -60,30 +60,31 @@ main {
   line-height: var(--line-height);
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0 1em 1em;
 
   a {
     color: var(--link-color);
   }
 
   h2 {
-    font-size: calc(var(--font-size) * 1.75);
+    font-size: calc(var(--font-size) * 2);
     font-weight: bold;
     margin-bottom: 2em;
   }
 
   h3 {
-    font-size: calc(var(--font-size) * 1.25);
+    font-size: calc(var(--font-size) * 1.5);
     font-weight: bold;
     margin-bottom: .5em;
   }
 }
 
 body.light {
-  // --font-color: red;
+  // --body-fill: white;
+  // --body-ink: black;
 }
 
 body.dark {
-  background-color: hsl(0, 20, 20);
-  color: var(--white);
+  // --body-fill: black;
+  // --body-ink: white;
 }
