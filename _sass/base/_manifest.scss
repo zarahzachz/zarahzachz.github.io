@@ -8,26 +8,27 @@
   --sans: -apple-system,'BlinkMacSystemFont','segoe ui','Roboto','Helvetica','Arial',sans-serif,'apple color emoji','segoe ui emoji','segoe ui symbol';
   --serif: 'Iowan Old Style', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-  --base-border-radius: 4px;
-
-  --font-family: var(--sans);
-  --font-size: 1rem;
-  --line-height: 1.5;
-  --content-width: 60em;
-
   --black: hsl(0, 20, 20);
   --white: white;
   --brand: tan;
   --link-color: dodgerblue;
+  --base-border-radius: 4px;
+
+  --body-fill: var(--white);
+  --font-color: var(--black);
+  --font-family: var(--sans);
+  --font-size: 1rem;
+  --line-height: 1.5;
+  --content-width: 40em;
+
 }
 
 html,
 body {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--body-fill);
+  color: var(--font-color);
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height);
 }
 
 [hidden] {
@@ -38,50 +39,43 @@ code, pre {
   font-family: var(--mono);
 }
 
-kbd {
-  font-size: calc(var(--font-size * .75));
-  padding: 0.0625rem 0.5rem;
-  border-radius: 0.125rem;
-  border: 2px solid;
-  box-shadow: 1px 1px 0 currentColor, 2px 2px 0 currentColor;
-}
-
-.light {
-  background-color: var(--white);
-  color: var(--black);
-}
-
-.dark {
-  background-color: hsl(0, 20, 20);
-  color: var(--white);
-}
-
-.serif {
-  font-family: var(--serif);
-}
-
-.sans-serif {
-  font-family: var(--sans);
-}
+// kbd {
+//   font-size: calc(var(--font-size * .75));
+//   padding: 0.0625rem 0.5rem;
+//   border-radius: 0.125rem;
+//   border: 2px solid;
+//   box-shadow: 1px 1px 0 currentColor, 2px 2px 0 currentColor;
+// }
 
 main {
-  max-width: 60ch;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 2ch;
+  padding: 0 1em;
 
   a {
     color: var(--link-color);
   }
 
   h2 {
-    font-size: calc(var(--font-size) * 2);
+    font-size: calc(var(--font-size) * 1.75);
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
   }
 
   h3 {
     font-size: calc(var(--font-size) * 1.25);
     font-weight: bold;
-    margin-bottom: .5rem;
+    margin-bottom: .5em;
   }
+}
+
+body.light {
+  // --font-color: red;
+}
+
+body.dark {
+  background-color: hsl(0, 20, 20);
+  color: var(--white);
 }

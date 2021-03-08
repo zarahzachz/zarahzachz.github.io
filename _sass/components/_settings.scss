@@ -1,3 +1,24 @@
+.settings-menu-trigger {
+  background-color: var(--brand);
+  border: 0;
+  border-radius: var(--base-border-radius);
+  color: var(--white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size);
+  margin-left: 2rem;
+  padding: .75rem 2rem;
+  
+  &:hover {
+    background-color: darken(tan, 10);
+  }
+
+  &:active,
+  &[aria-expanded="true"] {
+    background-color: darken(tan, 20);
+  }
+}
+
 .settings-menu {
   position: absolute;
   top: 5ch;

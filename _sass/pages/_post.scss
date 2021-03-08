@@ -1,37 +1,37 @@
 .post {
   .post-header {
-    font-size: 2rem;
+    font-size: calc(var(--font-size) * 2);
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
   }
 
   .post-body {
     * {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.25em;
     }
 
     h2 {
-      font-size: 1.5rem;
-      margin-bottom: .75rem;
-      margin-top: 3rem;
+      font-size: calc(var(--font-size) * 1.5);
+      margin-bottom: .75em;
+      margin-top: 3em;
     }
 
     h3 {
-      font-size: 1.25rem;
-      margin-bottom: .25rem;
+      font-size: calc(var(--font-size) * 1.25);
+      margin-bottom: .25em;
     }
 
     > img {
       border-radius: var(--base-border-radius);
       display: block;
-      margin: 2rem auto;
+      margin: 2em auto;
     }
 
     blockquote {
       background-color: hsla(0, 0, 95, 0.7);
       border-radius: var(--base-border-radius);
-      font-size: 1.25rem;
-      padding: 2ch;
+      font-size: calc(var(--font-family) * 1.25);
+      padding: 1em;
 
       *:last-child {
         margin-bottom: 0;
@@ -41,9 +41,9 @@
 
   .post-meta {
     border-top: 1px solid hsla(0, 0%, 65%, 1);
-    font-size: .75rem;
-    margin-top: 6ch;
-    padding: 2ch 0;
+    font-size: calc(var(--font-size) * .75);
+    margin-top: 3em;
+    padding: 1em 0;
     color: hsla(0, 0%, 65%, 1);
 
     .meta-tags ul,

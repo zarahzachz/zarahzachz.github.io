@@ -30,15 +30,15 @@ const setting = {
     15: '128px'
   },
   'line-height': {
-    1: '1em',
-    2: '1.2em',
-    3: '1.4em',
-    4: '1.6em',
-    5: '1.8em',
-    6: '2em',
-    7: '2.2em',
-    8: '2.4em',
-    9: '2.6em',
+    1: '1',
+    2: '1.2',
+    3: '1.4',
+    4: '1.6',
+    5: '1.8',
+    6: '2',
+    7: '2.2',
+    8: '2.4',
+    9: '2.6',
   },
   'content-width': {
     1: '20em',
@@ -79,7 +79,8 @@ const fontSizeHandler = fontSizeRange.addEventListener('input', function() {
   this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
 
   // Assign mapped value from Setting obj to CSS custom property
-  document.documentElement.style.setProperty('--font-size', setting[n][v]);
+  const main = document.querySelector('#main-content');
+  main.style.setProperty('--font-size', setting[n][v]);
 });
 
 const contentWidthGroup = menu.querySelector('[data-setting="content-width"]');
@@ -89,14 +90,15 @@ const contentWidthHandler = contentWidthRange.addEventListener('input', function
   const n = this.getAttribute('name');
 
   // Assign range value to output element
-  const o = fontSizeGroup.querySelector('output');
+  const o = contentWidthGroup.querySelector('output');
   o.value = parseInt(v);
 
   // Set aria-valuetext to range value, add label using name attr
   this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
 
   // Assign mapped value from Setting obj to CSS custom property
-  document.body.style.setProperty('--content-width', setting[n][v]);
+  const main = document.querySelector('#main-content');
+  main.style.setProperty('--content-width', setting[n][v]);
 });
 
 const lineHeightGroup = menu.querySelector('[data-setting="line-height"]');
@@ -106,14 +108,15 @@ const lineHeightHandler = lineHeightRange.addEventListener('input', function() {
   const n = this.getAttribute('name');
 
   // Assign range value to output element
-  const o = fontSizeGroup.querySelector('output');
+  const o = lineHeightGroup.querySelector('output');
   o.value = parseInt(v);
 
   // Set aria-valuetext to range value, add label using name attr
   this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
 
   // Assign mapped value from Setting obj to CSS custom property
-  document.documentElement.style.setProperty('--line-height', setting[n][v]);
+  const main = document.querySelector('#main-content');
+  main.style.setProperty('--line-height', setting[n][v]);
 });
 
 const themeGroup = menu.querySelector('[data-setting="theme"]');
