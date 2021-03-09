@@ -48,10 +48,6 @@ let settings = {
         const v = this.value;
         const n = this.getAttribute('name');
 
-        // Assign range value to output element
-        const o = range.nextElementSibling;
-        o.value = parseInt(v);
-
         // Set aria-valuetext to range value, add label using name attr
         this.setAttribute('aria-valuetext', `${n.replace('-', ' ')}: ${v}`)
 
