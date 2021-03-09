@@ -1,40 +1,36 @@
 .settings-menu-trigger {
-  background-color: var(--menu-fill);
+  background-color: var(--menu-btn-fill);
   border: 0;
   border-radius: var(--base-border-radius);
-  color: var(--menu-ink);
+  color: var(--menu-btn-ink);
   cursor: pointer;
   font-family: inherit;
-  font-size: var(--font-size);
+  font-size: var(--menu-font-size);
   margin-left: 2rem;
   padding: .75rem 2rem;
   
   &:hover {
-    background-color: var(--menu-fill-hover);
+    background-color: var(--menu-btn-fill-hover);
   }
 
   &:active,
   &[aria-expanded="true"] {
-    background-color: var(--menu-fill-active);
+    background-color: var(--menu-btn-fill-active);
   }
 }
 
 .settings-menu {
+  background-color: var(--menu-fill);
+  border: 1px solid var(--menu-border-ink);
+  border-radius: var(--base-border-radius);
+  color: var(--menu-ink);
+  font-size: var(--menu-font-size);
+  padding: 2ch;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 5ch;
   right: 3ch;
-  // border: 1px solid black;
-  border-radius: var(--base-border-radius);
-  padding: 2ch;
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  font-size: var(--font-size);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-              0 2px 2px rgba(0,0,0,0.20), 
-              0 4px 4px rgba(0,0,0,0.15), 
-              0 8px 8px rgba(0,0,0,0.10),
-              0 16px 16px rgba(0,0,0,0.05);
 
   fieldset {
     border: 1px solid hsla(0, 0%, 65%, 1);

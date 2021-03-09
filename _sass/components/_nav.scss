@@ -13,12 +13,16 @@ nav.global {
     align-items: center;
   }
 
-  li:not(:last-child) {
-    margin-right: 1ch;
+  li {
+    display: flex;
+    
+    &:not(:last-child) {
+      margin-right: 1ch;
 
-    &::after {
-      content: '/';
-      margin-left: 1ch;
+      &::after {
+        content: '/';
+        margin-left: 1ch;
+      }
     }
   }
 

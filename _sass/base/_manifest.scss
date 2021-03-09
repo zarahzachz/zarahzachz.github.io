@@ -7,16 +7,12 @@
   --sans: -apple-system,'BlinkMacSystemFont','segoe ui','Roboto','Helvetica','Arial',sans-serif,'apple color emoji','segoe ui emoji','segoe ui symbol';
   --serif: 'Iowan Old Style', 'Apple Garamond', 'Baskerville', 'Times New Roman', 'Droid Serif', 'Times', 'Source Serif Pro', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-  --black: hsl(0, 20, 20);
-  --white: white;
-  --brand: tan;
-  --link-color: dodgerblue;
   --base-border-radius: 4px;
 
-  --body-fill: var(--white);
-  --body-ink: var(--black);
-
-  --font-family: var(--sans);
+  /*
+  ** Font-size, line-height, content-width
+  ** modified by settings menu
+  */
   --font-size: 1rem;
   --line-height: 1.5;
   --content-width: 40em;
@@ -28,6 +24,7 @@ html {
 
 body {
   min-height: 100%;
+  padding: 1em;
 }
 
 html,
@@ -57,10 +54,10 @@ main {
   line-height: var(--line-height);
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 1em 1em;
+  padding: 1em;
 
   a {
-    color: var(--link-color);
+    color: var(--link-ink);
   }
 
   h2 {
@@ -85,7 +82,8 @@ body[data-font="sans-serif"] {
 }
 
 body[data-theme="light"] {
-  --gray: hsl(20deg 11% 84%);
+  --gray: hsl(20deg 11% 91%);
+  --gray-95: hsl(20deg 11% 95%);
   --black: hsl(30deg 5% 15%);
   --tan: hsl(29deg 13% 61%);
   --tan-50: hsl(29deg 13% 51%);
@@ -93,28 +91,50 @@ body[data-theme="light"] {
 
   --body-fill: var(--gray);
   --body-ink: var(--black);
-  --menu-fill: var(--tan);
-  --menu-fill-hover: var(--tan-50);
-  --menu-fill-active: var(--tan-40);
+  --link-ink: steelblue;
+  --link-ink-visited: slateblue;
+
+  --menu-btn-fill: var(--tan);
+  --menu-btn-fill-hover: var(--tan-50);
+  --menu-btn-fill-active: var(--tan-40);
+  --menu-btn-ink: var(--gray);
+  --menu-fill: var(--gray-95);
   --menu-ink: var(--black);
+  --menu-border-ink: var(--menu-ink);
+  --menu-font-size: 1rem;
+
   --nav-ink: var(--tan);
   --nav-ink-hover: var(--black);
+
+  --post-meta-ink: var(--tan);
 }
 
 body[data-theme="dark"] {
   --tan: hsl(34deg 52% 66%);
   --tan-50: hsl(34deg 52% 56%);
   --tan-40: hsl(34deg 52% 46%);
+  --tan-30: hsl(34deg 52% 40%);
   --white: hsl(0deg 0% 100%);
   --gray: hsl(0deg 0% 65%);
   --black: hsl(30deg 14% 9%);
+  --black-15: hsl(30deg 8% 13%);
 
   --body-fill: var(--black);
   --body-ink: var(--gray);
-  --menu-fill: var(--tan);
-  --menu-fill-hover: var(--tan-50);
-  --menu-fill-active: var(--tan-40);
-  --menu-ink: var(--white);
+  --link-ink: var(--tan-50);
+  --link-ink-visited: var(--link-ink);
+
+  --menu-btn-fill: var(--tan-50);
+  --menu-btn-fill-hover: var(--tan-40);
+  --menu-btn-fill-active: var(--tan-30);
+  --menu-btn-ink: var(--white);
+  --menu-fill: var(--black-15);
+  --menu-ink: var(--tan);
+  --menu-border-ink: var(--menu-fill);
+  --menu-font-size: 16px;
+
   --nav-ink: var(--tan);
   --nav-ink-hover: var(--white);
+  
+  --post-meta-ink: var(--tan);
 }
